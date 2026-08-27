@@ -27,7 +27,8 @@ const LoginForm = () => {
     }
 
     const loginGoogle = () => {
-        window.location.href = "http://localhost:8080/oauth2/authorization/google"
+        const backendBase = import.meta.env.VITE_BACKEND_URL.replace('/api', '');
+        window.location.href = `${backendBase}/oauth2/authorization/google`;
     }
 
     const [showPassword, setShowPassword] = useState(false);
