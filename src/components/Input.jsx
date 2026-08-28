@@ -15,7 +15,7 @@ const Input = forwardRef(({ icon, suffix, className = "", ...props }, ref) => {
             <input
                 ref={ref} /* <-- Esto conecta react-hook-form con el input */
                 className={`
-          w-full h-11 py-3 bg-surface-variant border-2 border-transparent 
+          w-full xl:h-11 py-3 bg-surface-variant border-2 border-transparent 
           focus:border-secondary focus:bg-surface-container-lowest outline-none 
           transition-colors rounded-lg font-body-md text-on-surface 
           placeholder:text-on-surface-variant/50

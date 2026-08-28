@@ -37,7 +37,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div className={"w-[40%] flex flex-col items-center justify-center bg-white rounded-lg"}>
+        <div className={"w-full h-full xl:mt-3 pt-5 bg-white xl:w-[40%] flex flex-col items-center justify-center rounded-lg"}>
             {/*ICONO*/}
             <div className={"bg-background rounded-full w-11.25 h-11.25 flex flex-col items-center justify-center"}>
              <span
@@ -55,8 +55,8 @@ const LoginForm = () => {
 
             <div className={"w-[80%] flex flex-col"}>
                 {/*FORMULARIO*/}
-                <form onSubmit={handleSubmit(onSubmit)} className={"grid grid-cols-1 gap-y-4 mt-10"}>
-                    <div className={"grid grid-cols-1 gap-y-1"}>
+                <form onSubmit={handleSubmit(onSubmit)} className={"grid grid-cols-1 gap-y-7 xl:gap-y-4 mt-10"}>
+                    <div className={"grid grid-cols-1 gap-y-4 xl:gap-y-1"}>
                         <label htmlFor="email" className={"input-label"}>Correo Electrónico</label>
                         <Input
                             type="text"
@@ -69,10 +69,10 @@ const LoginForm = () => {
                         {errors.email && <span className={"text-alert"}>{errors.email.message}</span>}
                     </div>
 
-                    <div className={"flex flex-col gap-y-1"}>
+                    <div className={"flex flex-col  gap-y-4 xl:gap-y-1"}>
                         <div className={"grid grid-cols-2"}>
                             <label htmlFor="password" className={"input-label"}>Contraseña</label>
-                            <p className={"text-sm text-blue-700"}>¿Olvidaste tu contraseña?</p>
+                            <p className={"text-sm text-blue-700 text-right"}>¿Olvidaste tu contraseña?</p>
                         </div>
 
                         <Input
