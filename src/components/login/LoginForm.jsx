@@ -37,7 +37,7 @@ const LoginForm = () => {
     }
 
     return (
-        <div className={"w-full h-full xl:mt-3 pt-5 bg-white xl:w-[40%] flex flex-col items-center justify-center rounded-lg"}>
+        <div className={"w-full min-h-dvh lg:min-h-[75dvh] xl:mt-3 pt-5 bg-white xl:w-[40%] flex flex-col items-center justify-center rounded-lg"}>
             {/*ICONO*/}
             <div className={"bg-background rounded-full w-11.25 h-11.25 flex flex-col items-center justify-center"}>
              <span
