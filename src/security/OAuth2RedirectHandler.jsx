@@ -9,13 +9,29 @@ const OAuth2RedirectHandler = () => {
     const [error, setError] = useState(false)
 
     const login = useAuthStore((state) => state.login)
+    const user = useAuthStore((state) => state.user)
+    const token = localStorage.getItem("token");
+
+    useEffect(() => {
+        if (token && !user) {
+            getMe(token)
+                .then((response) => {
+                    if (response.success){
+                        login(token, response.data)
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error recuperando usuario", error)
+                })
+        }
+    }, [token, user, login]);
 
     useEffect(() => {
         const token = searchParams.get("token")
         if (token) {
             getMe(token)
                 .then((response) => {
-                    if (response.success){
+                    if (response.success) {
                         const user = response.data
                         login(token, user)
                         navigate("/home", {replace: true})
